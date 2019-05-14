@@ -21,18 +21,25 @@ class RelUserProductService
 
 
     /**
-     * 创建基本信息
+     * 获取用户创建的所有产品
      * @param array $param
      * @return array
      * @author: 憧憬
      */
-    public function create(array $param)
+    public function list(array $param)
     {
+        $productBasicModel = self::$model->productBasicModel;
+        $relUserProductModel = self::$model->relUserProductModel;
+        $productInfoModel = self::$model->productInfoModel;
+
+        $guidArr = $relUserProductModel->where('user_guid', $param['guid'])->get(['product_guid']);
+
+        $productList = $productBasicModel->whereIn('guid', $guidArr)->get();
 
         return [
             'code' => 200,
             'result' => [
-                'info' => '添加产品信息成功'
+                'list' => $productList
             ]
         ];
     }

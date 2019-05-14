@@ -228,7 +228,6 @@ class ProductService extends BaseService
      */
     public function delete(array $param)
     {
-
         $productBasicModel = self::$model->productBasicModel;
         $relUserProductModel = self::$model->relUserProductModel;
         $productInfoModel = self::$model->productInfoModel;

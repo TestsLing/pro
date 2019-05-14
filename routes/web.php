@@ -31,3 +31,7 @@ Route::post('product/delete', 'ProductController@delete');
 // 修改产品
 Route::post('product/edit', 'ProductController@edit');
 
+// 获取用户下的所有产品
+Route::post('user/product/list', 'RelUserProductController@list');
+
+
