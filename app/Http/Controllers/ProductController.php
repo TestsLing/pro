@@ -107,6 +107,7 @@ class ProductController extends Controller
             'page' => 'integer',
             'limit' => 'integer',
             'title' => 'string',
+            'styleTag' => 'array',
             'desc' => 'string'
         ];
 

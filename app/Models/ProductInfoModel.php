@@ -9,12 +9,13 @@
 namespace App\Models;
 
 
+use App\Http\Controllers\Traits\ModelExtendTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ProductInfoModel extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, ModelExtendTrait;
 
     protected $table = 'data_product_info';
 
@@ -23,6 +24,7 @@ class ProductInfoModel extends Model
         'guid',
         'desc',
         'img',
+        'style_tag_ids'
     ];
 
     public $timestamps = true;

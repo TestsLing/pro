@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataProductBasicInfo extends Migration
+class CreateDataProductInfoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,6 +18,7 @@ class CreateDataProductBasicInfo extends Migration
             $table->char('guid', 32);
             $table->text('desc')->nullable(true);
             $table->json('img')->nullable(true);
+            $table->jsonb('style_tag_ids')->default('[]');
             $table->timestamps();
             $table->softDeletes();
         });

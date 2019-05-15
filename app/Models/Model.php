@@ -28,16 +28,33 @@ class Model
      */
     public $relUserProductModel;
 
+    /**
+     * 产品特色标签
+     * @var ProductStyleTagModel
+     */
+    public $productStyleTagModel;
+
+    /**
+     * 基础标签
+     * @var TagModel
+     */
+    public $tagModel;
+
 
     public function __construct(
         ProductBasicModel $productBasicModel,
         ProductInfoModel $productInfoModel,
+        ProductStyleTagModel $productStyleTagModel,
+        TagModel $tagModel,
         RelUserProductModel $relUserProductModel
     )
     {
         $this->productInfoModel = $productInfoModel;
         $this->productBasicModel = $productBasicModel;
         $this->relUserProductModel = $relUserProductModel;
+        $this->tagModel = $tagModel;
+        $this->productStyleTagModel = $productStyleTagModel;
+
     }
 
 }

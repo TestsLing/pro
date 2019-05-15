@@ -130,7 +130,7 @@ class ProductService extends BaseService
     }
 
     /**
-     * 获取用户列表
+     * 获取产品列表
      * @param array $param
      * @return array
      * @author: 憧憬
@@ -153,6 +153,12 @@ class ProductService extends BaseService
         if (isset($param['desc']) && !empty($param['desc'])) {
             $productBasicWhere->whereHas('productInfo', function ($query) use ($param) {
                 $query->where('desc', 'like', '%'. $param['desc'] .'%');
+            });
+        }
+
+        if (isset($param['styleTag']) && count($param['styleTag']) > 0) {
+            $productBasicWhere->whereHas('productInfo', function ($query) use ($param) {
+                $query->whereRaw("style_tag_ids::jsonb @> '".json_encode($param['styleTag'])."'::jsonb");
             });
         }
 

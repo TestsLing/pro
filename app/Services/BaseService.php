@@ -9,10 +9,11 @@
 namespace App\Services;
 
 
+use App\Http\Controllers\Traits\SelectTrait;
 use App\Http\Controllers\Traits\UpdateTrait;
 
 class BaseService
 {
-    use UpdateTrait;
+    use UpdateTrait, SelectTrait;
 
 }
