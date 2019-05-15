@@ -34,9 +34,9 @@ Route::post('product/edit', 'ProductController@edit');
 // 获取用户下的所有产品
 Route::post('user/product/list', 'RelUserProductController@list');
 
+
 // 获取平台下所有标签
 Route::post('tag/list', 'TagController@all');
-
 
 // 创建特色标签
 Route::post('product/tag/style/create', 'TagController@create');
@@ -44,3 +44,11 @@ Route::post('product/tag/style/create', 'TagController@create');
 // 获取特色标签列表
 Route::post('product/tag/style/list', 'TagController@list');
 
+// 修改标签
+Route::post('product/tag/style/edit', 'TagController@edit');
+
+// 删除标签
+Route::post('product/tag/style/delete', 'TagController@delete');
+
+// 禁用标签
+Route::post('product/tag/style/prohibit', 'TagController@prohibit');

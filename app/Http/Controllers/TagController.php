@@ -102,4 +102,89 @@ class TagController extends Controller
         // 根据业务处理结果做出响应
         return response($result['result'], $result['code']);
     }
+
+
+
+    public function edit(Request $request)
+    {
+        // 定义业务参数验证规则
+        $paramRule = [
+            'id' => 'required|integer',
+            'title' => 'required|string'
+        ];
+
+        // 验证参数
+        $validateResult = $this->validateParam($request, $paramRule);
+
+        // 根据验证结果确定是否返回响应还是获取业务参数
+        if ($validateResult['code'] == 200) {
+            // 获取验证后的业务参数
+            $param = $validateResult['result'];
+        } else {
+            return $validateResult['result'];
+        }
+
+        $param['guid'] = $request->input('guid');
+
+        // 将业务参数传给相关服务做业务处理
+        $result = self::$tagService->edit($param);
+
+        // 根据业务处理结果做出响应
+        return response($result['result'], $result['code']);
+    }
+
+
+    public function delete(Request $request)
+    {
+        // 定义业务参数验证规则
+        $paramRule = [
+            'id' => 'required|integer'
+        ];
+
+        // 验证参数
+        $validateResult = $this->validateParam($request, $paramRule);
+
+        // 根据验证结果确定是否返回响应还是获取业务参数
+        if ($validateResult['code'] == 200) {
+            // 获取验证后的业务参数
+            $param = $validateResult['result'];
+        } else {
+            return $validateResult['result'];
+        }
+
+        $param['guid'] = $request->input('guid');
+
+        // 将业务参数传给相关服务做业务处理
+        $result = self::$tagService->delete($param);
+
+        // 根据业务处理结果做出响应
+        return response($result['result'], $result['code']);
+    }
+
+    public function prohibit(Request $request)
+    {
+        // 定义业务参数验证规则
+        $paramRule = [
+            'id' => 'required|integer'
+        ];
+
+        // 验证参数
+        $validateResult = $this->validateParam($request, $paramRule);
+
+        // 根据验证结果确定是否返回响应还是获取业务参数
+        if ($validateResult['code'] == 200) {
+            // 获取验证后的业务参数
+            $param = $validateResult['result'];
+        } else {
+            return $validateResult['result'];
+        }
+
+        $param['guid'] = $request->input('guid');
+
+        // 将业务参数传给相关服务做业务处理
+        $result = self::$tagService->prohibit($param);
+
+        // 根据业务处理结果做出响应
+        return response($result['result'], $result['code']);
+    }
 }

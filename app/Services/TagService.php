@@ -74,6 +74,120 @@ class TagService
 
 
     /**
+     * 修改标签
+     * @param array $param
+     * @return array
+     * @author: 憧憬
+     */
+    public function edit(array $param)
+    {
+        $productStyleTagModel = self::$model->productStyleTagModel;
+
+        try{
+            $tag = $productStyleTagModel->find($param['id']);
+
+            if (empty($tag)) throw new \Exception('未找到标签');
+
+            $tag->title = $param['title'];
+
+            $res = $tag->save();
+
+            if (!$res) throw new \Exception('修改标签失败');
+
+        }catch (\Exception $e) {
+            app('log')->debug('修改标签失败 '. $e);
+            return [
+                'code' => 520,
+                'result' => [
+                    'info' => '修改标签失败'
+                ]
+            ];
+        }
+
+        return [
+            'code' => 200,
+            'result' => [
+                'info' => '修改标签成功'
+            ]
+        ];
+    }
+
+    /**
+     * 删除标签
+     * @param array $param
+     * @return array
+     * @author: 憧憬
+     */
+    public function delete(array $param)
+    {
+        $productStyleTagModel = self::$model->productStyleTagModel;
+
+        try{
+            $res = $productStyleTagModel->find($param['id'])->delete();
+
+            if (!$res) throw new \Exception('删除标签失败');
+
+        }catch (\Exception $e) {
+            app('log')->debug('删除标签失败 '. $e);
+            return [
+                'code' => 520,
+                'result' => [
+                    'info' => '删除标签失败'
+                ]
+            ];
+        }
+
+
+        return [
+            'code' => 200,
+            'result' => [
+                'info' => '删除标签成功'
+            ]
+        ];
+    }
+
+
+    /**
+     * 禁用标签
+     * @param array $param
+     * @return array
+     * @author: 憧憬
+     */
+    public function prohibit(array $param)
+    {
+        $productStyleTagModel = self::$model->productStyleTagModel;
+
+        try{
+            $tag = $productStyleTagModel->find($param['id']);
+
+            if (empty($tag)) throw new \Exception('未找到标签');
+
+            $tag->status = 9;
+
+            $res = $tag->save();
+
+            if (!$res) throw new \Exception('禁用标签失败');
+
+        }catch (\Exception $e) {
+            app('log')->debug('禁用标签失败 '. $e);
+            return [
+                'code' => 520,
+                'result' => [
+                    'info' => '禁用标签失败'
+                ]
+            ];
+        }
+
+        return [
+            'code' => 200,
+            'result' => [
+                'info' => '禁用成功'
+            ]
+        ];
+    }
+
+
+    /**
      * 获取所有标签
      * @param array $param
      * @return array
