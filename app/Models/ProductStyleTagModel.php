@@ -9,6 +9,7 @@
 namespace App\Models;
 
 
+use App\Enums\Tag\ProductStyleTagStatus;
 use Illuminate\Database\Eloquent\Model;
 
 class ProductStyleTagModel extends Model
@@ -30,6 +31,6 @@ class ProductStyleTagModel extends Model
      */
     public function scopeActive($query)
     {
-        return $query->where('status', 1);
+        return $query->where('status', ProductStyleTagStatus::ACTIVATED);
     }
 }
