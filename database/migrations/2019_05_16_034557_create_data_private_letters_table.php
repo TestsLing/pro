@@ -19,6 +19,7 @@ class CreateDataPrivateLettersTable extends Migration
             $table->char('receiver_guid', 32);
             $table->integer('content_id');
             $table->smallInteger('is_read')->default(0);
+            $table->smallInteger('type')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
