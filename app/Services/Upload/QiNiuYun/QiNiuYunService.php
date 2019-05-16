@@ -20,7 +20,7 @@ class QiNiuYunService
         $bucket    = config('qiniu.qiniu_test_bucket');
         $upUrl    = config('qiniu.upurl');
         // 简单上传凭证
-        $expires = 3600;
+        $expires = config('qiniu.expires');
 
         /**
          * 可以根据上传文件类型设置

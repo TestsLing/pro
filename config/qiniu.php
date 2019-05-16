@@ -12,4 +12,5 @@ return [
     'qiniu_access_key' => env('QINIU_ACCESS_KEY', ''),
     'qiniu_test_bucket' => env('QINIU_TEST_BUCKET', ''),
     'upurl' => env('UPURL', ''),
+    'expires' => 3600
 ];
