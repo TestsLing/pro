@@ -19,6 +19,7 @@ class CreateDataProductInfoTable extends Migration
             $table->text('desc')->nullable(true);
             $table->json('img')->nullable(true);
             $table->jsonb('style_tag_ids')->default('[]');
+            $table->smallInteger('status')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
