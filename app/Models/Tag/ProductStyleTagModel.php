@@ -6,7 +6,7 @@
  * Time: 10:29
  */
 
-namespace App\Models;
+namespace App\Models\Tag;
 
 
 use App\Enums\Tag\ProductStyleTagStatus;

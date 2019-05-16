@@ -58,3 +58,22 @@ Route::group(['namespace' => 'Tag'], function () {
 
 });
 
+
+Route::group(['namespace' => 'Letter'], function () {
+    // 给用户留言
+    Route::post('leave_message', 'LetterController@leaveMessage');
+
+    // 获取用户留言列表
+    Route::post('user/leave_message/list', 'LetterController@list');
+
+    // 获取用户留言详情
+    Route::post('user/leave_message/detail', 'LetterController@detail');
+
+    // 删除单个留言
+    Route::post('user/leave_message/delete', 'LetterController@delete');
+
+    // 一键已读所有留言
+    Route::post('user/leave_message/read', 'LetterController@readAllMessage');
+
+
+});

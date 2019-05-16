@@ -8,6 +8,15 @@
 
 namespace App\Models;
 
+use App\Models\Product\ProductInfoModel;
+use App\Models\Product\ProductBasicModel;
+use App\Models\Product\RelUserProductModel;
+use App\Models\Tag\TagModel;
+use App\Models\Tag\ProductStyleTagModel;
+use App\Models\Letter\LetterModel;
+use App\Models\Letter\LetterContentModel;
+
+
 class Model
 {
     /**
@@ -40,12 +49,26 @@ class Model
      */
     public $tagModel;
 
+    /**
+     * 私信-留言
+     * @var LetterModel
+     */
+    public $letterModel;
+
+    /**
+     * 私信-留言-内容
+     * @var LetterContentModel
+     */
+    public $letterContentModel;
+
 
     public function __construct(
         ProductBasicModel $productBasicModel,
         ProductInfoModel $productInfoModel,
         ProductStyleTagModel $productStyleTagModel,
         TagModel $tagModel,
+        LetterModel $letterModel,
+        LetterContentModel $letterContentModel,
         RelUserProductModel $relUserProductModel
     )
     {
@@ -54,6 +77,8 @@ class Model
         $this->relUserProductModel = $relUserProductModel;
         $this->tagModel = $tagModel;
         $this->productStyleTagModel = $productStyleTagModel;
+        $this->letterModel = $letterModel;
+        $this->letterContentModel = $letterContentModel;
 
     }
 

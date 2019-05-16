@@ -6,7 +6,7 @@
  * Time: 09:56
  */
 
-namespace App\Models;
+namespace App\Models\Product;
 
 
 use App\Http\Controllers\Traits\ModelExtendTrait;
