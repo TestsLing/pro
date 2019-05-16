@@ -6,11 +6,12 @@
  * Time: 10:12
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Product;
 
 
 use Illuminate\Http\Request;
-use App\Services\ProductService;
+use App\Services\Product\ProductService;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {

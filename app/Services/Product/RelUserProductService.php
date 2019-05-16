@@ -6,7 +6,7 @@
  * Time: 11:38
  */
 
-namespace App\Services;
+namespace App\Services\Product;
 
 use Exception;
 

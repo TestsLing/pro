@@ -6,12 +6,13 @@
  * Time: 10:12
  */
 
-namespace App\Services;
+namespace App\Services\Product;
 
 use App\Http\Resources\ProductDetailResource;
 use App\Tools\Common;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use App\Services\BaseService;
 
 class ProductService extends BaseService
 {

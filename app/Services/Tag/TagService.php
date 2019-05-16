@@ -6,7 +6,7 @@
  * Time: 10:42
  */
 
-namespace App\Services;
+namespace App\Services\Tag;
 
 
 class TagService

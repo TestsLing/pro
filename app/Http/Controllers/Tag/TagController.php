@@ -6,10 +6,11 @@
  * Time: 10:41
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tag;
 
 
-use App\Services\TagService;
+use App\Services\Tag\TagService;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
