@@ -75,5 +75,13 @@ Route::group(['namespace' => 'Letter'], function () {
     // 一键已读所有留言
     Route::post('user/leave_message/read', 'LetterController@readAllMessage');
 
+});
 
+
+Route::group(['namespace' => 'Upload'], function () {
+    // 获取七牛云Token
+    Route::post('upload/get/qn_token', 'QiNiuYun\QiNiuYunController@getQiNiuYunToken');
+
+    // 获取阿里云上传参数
+    Route::post('upload/get/ali_policy', 'AliOss\AliOssController@getAliOSSPolicy');
 });

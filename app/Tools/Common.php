@@ -10,14 +10,12 @@ use Illuminate\Support\Facades\Redis;
  *
  * Class Common
  * @package App\Tools
- * @author 郭鹏超
  */
 class Common
 {
     /**
      * 返回uuid
      * @return string
-     * @author 郭鹏超
      */
     public static function getUuid()
     {
@@ -41,12 +39,8 @@ class Common
      * @param $url
      * @param bool $params
      * @param int $isPostxPay($payParam);
-
-        app('log')->info('微信统一下单接口返回数据：=' . json_encode($payResult));
-
      * @param int $https
      * @return bool|mixed
-     * @author 郭鹏超
      */
     public static function curl($url, $params = false, $isPost = 1, $https = 0)
     {
@@ -114,7 +108,6 @@ class Common
      * @param $pwd
      * @param int $position
      * @return string
-     * @author 郭鹏超
      */
     public static function cryptString($user, $pwd, $position = 3)
     {
@@ -128,7 +121,6 @@ class Common
      *
      * @param $curl
      * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
-     * @author 郭鹏超
      */
     public static function returnCurlResult($curl)
     {
@@ -152,7 +144,6 @@ class Common
      * 电信号码段:133、153、180、189
      * @param $phone
      * @return \Illuminate\Http\Response|\Laravel\Lumen\Http\ResponseFactory
-     * @author 李克勤
      */
     public static function checkCellphone($phone)
     {
@@ -217,7 +208,6 @@ class Common
      * @param int $isPost
      * @param int $https
      * @return bool|mixed
-     * @author 郭鹏超
      */
     public static function curlClient($url, $params = false, $isPost = 1, $https = 0)
     {
