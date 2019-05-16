@@ -53,7 +53,7 @@ class TagController extends Controller
     {
         // 定义业务参数验证规则
         $paramRule = [
-
+            'tag' => 'array'
         ];
 
         // 验证参数

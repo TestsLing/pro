@@ -197,8 +197,11 @@ class TagService
     {
         $tagModel = self::$model->tagModel;
 
-        $list = $tagModel->get();
-
+        if (isset($param['tag'])) {
+            $list = $tagModel->whereIn('id', $param['tag'])->get(['id','title']);
+        }else{
+            $list = $tagModel->get();
+        }
 
         return [
             'code' => 200,
