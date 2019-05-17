@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ModelServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        SwooleTW\Http\LaravelServiceProvider::class,
 
     ],
 

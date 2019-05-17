@@ -12,7 +12,8 @@
         "laravel/tinker": "~1.0",
         "predis/predis": "^1.1",
         "qiniu/php-sdk": "^7.2",
-        "ramsey/uuid": "^3.7"
+        "ramsey/uuid": "^3.7",
+        "swooletw/laravel-swoole": "^2.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
